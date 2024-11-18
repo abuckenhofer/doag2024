@@ -25,6 +25,6 @@ DB_PASSWORD=
 First, install the required Python packages with "pip install -r requirements.txt"
 Then run the scripts in directory:
 - 1*: example with text embeddings
-- 2: examples with music data which is already numeric
+- 2*: examples with music data which is already numeric
 
 For more information on Vector databases see my personal blog, e.g. [Vector databases - what, why, and how](https://buckenhofer.com/2024/05/vector-database-what-why-and-how/).
