@@ -29,11 +29,11 @@ conn = psycopg2.connect(
 )
 cursor = conn.cursor()
 
-# Testdaten
-doc_list = ["I like apples"]
+# Abfragedaten
+doc = "I like apples"
 
 # Generieren von Embeddings 
-doc_embeddings = [generate_embedding(text) for text in doc_list]
+doc_embedding = generate_embedding(doc) 
 
 # Query for similarity search
 doc_query = """
@@ -43,16 +43,13 @@ ORDER BY similarity
 LIMIT 5
 """
 
-# Execute the query for each generated embedding
-# Execute the query for each generated embedding
-for embedding in doc_embeddings:
-    cursor.execute(doc_query, (embedding,))
-    results = cursor.fetchall()
-    
-    print("Similarity Results:")
-    for doc_text, similarity in results:
-        print(f"{doc_text}, Similarity: {similarity}")
+# Execute the query 
+cursor.execute(doc_query, (doc_embedding,))
+results = cursor.fetchall()
 
+print("Similarity Results:")
+for doc_text, similarity in results:
+    print(f"{doc_text}, Similarity: {similarity}")
 
 # Commit und Aufräumen
 conn.commit()

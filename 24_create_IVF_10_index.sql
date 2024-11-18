@@ -5,9 +5,3 @@ CREATE INDEX music_ivf ON music
        USING ivfflat (songVector vector_cosine_ops) 
        WITH (lists = 10);
 
-/*
-DROP INDEX IF EXISTS music_ivf;
-CREATE INDEX music_ivf ON music 
-       USING ivfflat (songVector vector_cosine_ops) 
-       WITH (lists = 4);
-*/
