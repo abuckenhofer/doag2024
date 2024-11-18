@@ -35,10 +35,9 @@ truncate_query = "TRUNCATE TABLE doc"
 cursor.execute(truncate_query)
 
 # Testdaten
-doc_list = ["I eat apples", 
-            "I eat pears", 
-            "I drink red wine",
+doc_list = ["I like apples", 
             "I drive a Mercedes-Benz",
+            "I like Golden Delicious", 
             "I live in a flat"
             ]
 

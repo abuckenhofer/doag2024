@@ -30,14 +30,14 @@ conn = psycopg2.connect(
 cursor = conn.cursor()
 
 # Testdaten
-doc_list = ["I eat apples"]
+doc_list = ["I like apples"]
 
 # Generieren von Embeddings 
 doc_embeddings = [generate_embedding(text) for text in doc_list]
 
 # Query for similarity search
 doc_query = """
-SELECT doc_text, doc_vector <-> %s::vector AS similarity
+SELECT doc_text, doc_vector <=> %s::vector AS similarity
 FROM doc
 ORDER BY similarity
 LIMIT 5

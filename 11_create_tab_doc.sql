@@ -1,6 +1,7 @@
 CREATE EXTENSION IF NOT EXISTS vector;
 
-CREATE TABLE IF NOT EXISTS doc (
+DROP TABLE IF EXISTS doc;
+CREATE TABLE doc (
     doc_id SERIAL PRIMARY KEY,
     doc_text varchar(100), 
     doc_vector VECTOR(768) 
