@@ -3,3 +3,5 @@ pip-system-certs
 psycopg2-binary
 transformers 
 torch 
+scikit-learn
+matplotlib
