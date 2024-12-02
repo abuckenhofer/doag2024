@@ -16,7 +16,7 @@ DB_HOST=localhost
 DB_NAME=
 DB_USER=
 DB_PASSWORD=
-
+```
 ## Steps to run example
 First, install the required Python packages with "pip install -r requirements.txt"
 Then run the scripts in directory:
